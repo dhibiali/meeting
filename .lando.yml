@@ -2,3 +2,8 @@ name: meeting
 recipe: drupal8
 config:
   webroot: web
+tooling:
+  phpunit:
+    service: appserver
+    cmd: vendor/bin/phpunit
+
