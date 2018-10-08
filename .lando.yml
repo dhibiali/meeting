@@ -3,20 +3,15 @@ recipe: drupal8
 config:
   webroot: web
 tooling:
-  platform:
-    service: appserver
-    description: Run Platform CLI commands
-    cmd: /var/www/.platformsh/bin/platform
   phplint:
     service: appserver
-    cmd: /app/vendor/bin/phplint
+    cmd: vendor/bin/phplint
   phpcs:
     service: appserver
-    cmd: /app/vendor/bin/phpcs
+    cmd: vendor/bin/phpcs
   phpunit:
     service: appserver
-    cmd: /app/vendor/bin/phpunit
+    cmd: vendor/bin/phpunit
   behat:
     service: appserver
-    cmd: /app/vendor/bin/behat
-
+    cmd: vendor/bin/behat
