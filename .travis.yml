@@ -54,7 +54,7 @@ script:
   # Lint the codez
   #- lando phplint
 
-  - lando phpcs --config-set installed_paths /vendor/drupal/coder/coder_sniffer
+  - lando phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
   - lando phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=install,module,php,inc web/modules web/themes web/profiles
 
   ##- if [[ $RELEASE = dev ]]; then composer --verbose remove --no-update drupal/console; fi;
