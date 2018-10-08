@@ -31,6 +31,15 @@ before_install:
   - composer --verbose self-update --$COMPOSER_CHANNEL
   - composer --version
 
+    # Install Lando
+  - sudo apt-get -y update
+  - sudo apt-get -y install cgroup-bin curl
+  - curl -fsSL -o /tmp/lando.deb https://github.com/lando/lando/releases/download/v3.0.0-beta.47/lando-v3.0.0-beta.47.deb
+  - sudo dpkg -i /tmp/lando.deb
+
+    # Sanity check to make sure we are rolling
+  - lando version
+
 install:
   - composer --verbose validate
   - composer --verbose install
