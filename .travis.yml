@@ -36,8 +36,8 @@ install:
   - composer --verbose install
 
 script:
-  - rm -f .lando.yml
-  - cp -rf .lando.travis.yml .lando.yml
+  #- rm -f .lando.yml
+  #- cp -rf .lando.travis.yml .lando.yml
   - lando start -- -v
 
   # Run non-db required tests eg linting/code standards/unit tests
